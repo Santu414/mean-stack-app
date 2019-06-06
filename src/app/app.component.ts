@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { Post } from "./posts/post.model";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'crudoperation';
+  title = "crudoperation";
+  storedPost:Post[] = [];
+
+  onPostAdded(post) {
+    this.storedPost.push(post);
+  }
 }
